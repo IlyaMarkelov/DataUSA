@@ -11,6 +11,10 @@ class NetworkManager {
     
     var dataUSA: DataUSA?
     
+    static let shared = NetworkManager()
+    
+    private init() {}
+    
     func fetchDataUSA(completed: @escaping () -> ()) {
         guard let url = URL(string: "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest") else { return }
         

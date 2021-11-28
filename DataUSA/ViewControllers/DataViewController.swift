@@ -9,7 +9,7 @@ import UIKit
 
 class DataViewController: UITableViewController {
     
-    var networkManager = NetworkManager()
+    var networkManager = NetworkManager.shared
             
     override func viewDidLoad() {
         super.viewDidLoad()
