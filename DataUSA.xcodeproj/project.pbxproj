@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		988ECEE3275107AA004AC951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988ECEE2275107AA004AC951 /* AppDelegate.swift */; };
 		988ECEE5275107AA004AC951 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988ECEE4275107AA004AC951 /* SceneDelegate.swift */; };
-		988ECEE7275107AA004AC951 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988ECEE6275107AA004AC951 /* ViewController.swift */; };
 		988ECEEA275107AA004AC951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 988ECEE8275107AA004AC951 /* Main.storyboard */; };
 		988ECEEC275107AD004AC951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988ECEEB275107AD004AC951 /* Assets.xcassets */; };
 		988ECEEF275107AD004AC951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 988ECEED275107AD004AC951 /* LaunchScreen.storyboard */; };
+		988ECEF7275107CA004AC951 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988ECEF6275107CA004AC951 /* NetworkManager.swift */; };
+		988ECEF927510837004AC951 /* DataCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988ECEF827510837004AC951 /* DataCountry.swift */; };
+		988ECEFB275113B0004AC951 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988ECEFA275113B0004AC951 /* DataViewController.swift */; };
+		988ECF012752D3F7004AC951 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988ECF002752D3F7004AC951 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		988ECEDF275107AA004AC951 /* DataUSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataUSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988ECEE2275107AA004AC951 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		988ECEE4275107AA004AC951 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		988ECEE6275107AA004AC951 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		988ECEE9275107AA004AC951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		988ECEEB275107AD004AC951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		988ECEEE275107AD004AC951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		988ECEF0275107AD004AC951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		988ECEF6275107CA004AC951 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		988ECEF827510837004AC951 /* DataCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCountry.swift; sourceTree = "<group>"; };
+		988ECEFA275113B0004AC951 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		988ECF002752D3F7004AC951 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		988ECEE1275107AA004AC951 /* DataUSA */ = {
 			isa = PBXGroup;
 			children = (
-				988ECEE2275107AA004AC951 /* AppDelegate.swift */,
-				988ECEE4275107AA004AC951 /* SceneDelegate.swift */,
-				988ECEE6275107AA004AC951 /* ViewController.swift */,
+				988ECF052752D8A8004AC951 /* App */,
+				988ECF022752D82F004AC951 /* Services */,
+				988ECF032752D873004AC951 /* Models */,
+				988ECF042752D883004AC951 /* ViewControllers */,
 				988ECEE8275107AA004AC951 /* Main.storyboard */,
 				988ECEEB275107AD004AC951 /* Assets.xcassets */,
 				988ECEED275107AD004AC951 /* LaunchScreen.storyboard */,
 				988ECEF0275107AD004AC951 /* Info.plist */,
 			);
 			path = DataUSA;
+			sourceTree = "<group>";
+		};
+		988ECF022752D82F004AC951 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				988ECEF6275107CA004AC951 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		988ECF032752D873004AC951 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				988ECEF827510837004AC951 /* DataCountry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		988ECF042752D883004AC951 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				988ECEFA275113B0004AC951 /* DataViewController.swift */,
+				988ECF002752D3F7004AC951 /* DetailsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		988ECF052752D8A8004AC951 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				988ECEE2275107AA004AC951 /* AppDelegate.swift */,
+				988ECEE4275107AA004AC951 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				988ECEE7275107AA004AC951 /* ViewController.swift in Sources */,
+				988ECEF7275107CA004AC951 /* NetworkManager.swift in Sources */,
 				988ECEE3275107AA004AC951 /* AppDelegate.swift in Sources */,
+				988ECEFB275113B0004AC951 /* DataViewController.swift in Sources */,
 				988ECEE5275107AA004AC951 /* SceneDelegate.swift in Sources */,
+				988ECEF927510837004AC951 /* DataCountry.swift in Sources */,
+				988ECF012752D3F7004AC951 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
