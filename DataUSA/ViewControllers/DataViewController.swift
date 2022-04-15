@@ -14,7 +14,7 @@ class DataViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
-        fetchData()
+//        fetchData()
     }
 
     // MARK: - Table view data source
@@ -42,28 +42,28 @@ class DataViewController: UITableViewController {
         }
     }
     
-    private func fetchData() {
-        AF.request(Link.dataUSAApi.rawValue)
-            .validate()
-            .responseJSON { dataResponse in
-                switch dataResponse.result {
-                case .success(let value):
-                    guard let dataUSA = value as? [String: Any] else {return}
-                    guard let dataUSAArray = dataUSA["data"] as? [Any] else {return}
-                    guard let dataStateArray = dataUSAArray as? [[String: Any]] else {return}
-                    for data in dataStateArray {
-                        let dataState = DataState(
-                            state: data["State"] as? String,
-                            year: data["Year"] as? String,
-                            population: data["Population"] as? Int
-                        )
-                        self.dataState.append(dataState)
-                    }
-                    self.tableView.reloadData()
-                    print(dataUSA)
-                case .failure(let error):
-                    print(error)
-                }
-            }
-    }
+//    private func fetchData() {
+//        AF.request(Link.dataUSAApi.rawValue)
+//            .validate()
+//            .responseJSON { dataResponse in
+//                switch dataResponse.result {
+//                case .success(let value):
+//                    guard let dataUSA = value as? [String: Any] else {return}
+//                    guard let dataUSAArray = dataUSA["data"] as? [Any] else {return}
+//                    guard let dataStateArray = dataUSAArray as? [[String: Any]] else {return}
+//                    for data in dataStateArray {
+//                        let dataState = DataState(
+//                            state: data["State"] as? String,
+//                            year: data["Year"] as? String,
+//                            population: data["Population"] as? Int
+//                        )
+//                        self.dataState.append(dataState)
+//                    }
+//                    self.tableView.reloadData()
+//                    print(dataUSA)
+//                case .failure(let error):
+//                    print(error)
+//                }
+//            }
+//    }
 }

@@ -5,6 +5,9 @@
 //  Created by Илья Маркелов on 26.11.2021.
 //
 
+struct DataUSA: Decodable {
+    var data: [DataState]?
+}
 
 struct DataState: Decodable {
     let state: String?
@@ -17,21 +20,18 @@ struct DataState: Decodable {
         case population = "Population"
     }
     
-//    init(state: String, year: String, population: Int) {
-//        self.state = state
-//        self.year = year
-//        self.population = population
-//    }
-//    
-//    init(dataState: [String: Any]) {
-//        state = dataState["State"] as? String
-//        year = dataState["Year"] as? String
-//        population = dataState["Population"] as? Int
-//    }
-}
-
-struct DataUSA: Decodable {
-    var data: [DataState]?
+    init(dataState: [String: Any]) {
+        state = dataState["State"] as? String
+        year = dataState["Year"] as? String
+        population = dataState["Population"] as? Int
+    }
+    
+    static func getDataUSA(from date: Any) -> [DataState]{
+        guard let dataUSA = date as? [String: Any] else {return []}
+        guard let dataUSAArray = dataUSA["data"] as? [Any] else {return []}
+        guard let dataStateArray = dataUSAArray as? [[String: Any]] else {return []}
+        return dataStateArray.compactMap { DataState(dataState: $0)}
+    }
 }
 
 enum Link: String {
